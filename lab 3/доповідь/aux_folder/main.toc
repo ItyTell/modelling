@@ -1,0 +1,2 @@
+\babel@toc {ukrainian}{}\relax 
+\contentsline {chapter}{\numberline {1}Постановка задачі}{2}{chapter.1}%

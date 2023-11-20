@@ -1,0 +1,136 @@
+\chapter{Постановка задачі}
+
+
+Особливості нашого варіанту:
+
+
+$$ L(\partial_s)=\partial_t^2-c^2 \partial_x^2 ; \quad G(s)=\frac{H(t- \frac{r}{c})}{2 c}, \quad s=(x, t), \quad r=|x|,$$
+
+$$H(t)=\begin{cases}0 \quad  t \leq 0, \\ 1 \quad t>0 .\end{cases} \text { - функція Хевісайда. }$$
+
+
+Вектори $ u_0 = (u_{0m} , m= 1, M_0)^T, u_\Gamma = (u_{\Gamma m} , m= 1, M_g)^T $ 
+невідомих фіктивних зовнішньодинамічних збурень, вибераємо їх за середньоквадратичним відхиленням:
+
+
+$$ \Phi = \sum_{r=1}^{R_0} \int\limits_{S_0}(L_r^0(\partial_t)y(s)|_{t=0} - Y_r^0(x))^2dx + $$
+
+
+$$+\sum_{p=1}^{R_\Gamma}\int\limits_{\Gamma}dx\int\limits_{0}^{T} (L_p^\Gamma(\partial_x)y(s) - Y_p^\Gamma(x,t))^2dt \rightarrow \m$$
+
+
+Для знаходження векторів отримаємо систему:
+
+
+$$
+\begin{aligned}
+& \left.\sum_{m=1}^{M_0} L_r^0\left(\partial_t\right) G\left(s-s_m^0\right)\right|_{t=0} u_{0 m}+\sum_{m=1}^{M_{\Gamma}} L_r^0\left(\partial_t\right) G\left(s-s_m^{\Gamma}\right) u_{\Gamma m}= \\
+& =\bar{Y}_r^0(x)\left(r=\overline{1, R_0}\right), \\
+& \left.\sum_{m=1}^{M_0} L_\rho^{\Gamma}\left(\partial_x\right) G\left(s-s_m^0\right)\right|_{x \in \Gamma} u_{0 m}+\sum_{m=1}^{M_{\Gamma}} L_\rho^{\Gamma}\left(\partial_x\right) G\left(s-s_m^{\Gamma}\right) u_{\Gamma m}= \\
+& =\bar{Y}_\rho^{\Gamma}(x, t) \quad\left(\rho=\overline{1, R_{\Gamma}}\right) .
+\end{aligned}
+$$
+
+При цьому
+$$
+\begin{gathered}
+\bar{Y}_r^0(x)=Y_r^0(x)-\left.L_r^0\left(\partial_t\right) y_{\infty}(s)\right|_{t=0}, \\
+\bar{Y}_\rho^{\Gamma}(x, t)=Y_\rho^{\Gamma}(x, t)-\left.L_\rho^{\Gamma}\left(\partial_x\right) y_{\infty}(s)\right|_{x \in \Gamma} .
+\end{gathered}
+$$
+
+
+Для розв'язання системи згідно із критерієм зведемо їі до вигляду
+$
+B(s) \bar{u}=Y(s),
+$
+де
+$
+\bar{u}=\operatorname{col}\left(u_0, u_{\Gamma}\right),
+$
+a
+$$
+\begin{aligned}
+& Y(s)=\operatorname{col}\left(Y_0(x)\left(x \in S_0\right), Y_{\Gamma}(x, t)(x, t) \in \Gamma \times[0, T]\right), \\
+& B(s)= \\
+& =\left(\begin{array}{cc}
+\left(B_{11}(x)\left(x \in S_0\right)\right) & \left(B_{12}(x)\left(x \in S_0\right)\right) \\
+\left.\left(B_{21}(x, t)(x, t) \in \Gamma \times[0, T]\right)\right) & \left.\left(B_{22}(x, t)(x, t) \in \Gamma \times[0, T]\right)\right)
+\end{array}\right) \\
+& \text { при } \\
+& Y_0(x)=\operatorname{col}\left(\bar{Y}_r^0(x), r=\overline{1, R_0}\right), \\
+& Y_{\Gamma}(x, t)=\operatorname{col}\left(\bar{Y}_\rho^{\Gamma}(s), \rho=\overline{1, R_{\Gamma}}\right), \\
+&
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& B_{11}(x)=\operatorname{col}\left(\operatorname{str}\left(\left.L_r^0\left(\partial_t\right) G\left(s-s_m^0\right)\right|_{t=0}, m=\overline{1, M_0}\right), r=\overline{1, R_0}\right), \\
+& B_{12}(x)=\operatorname{col}\left(\operatorname{str}\left(\left.L_r^0\left(\partial_t\right) G\left(s-s_m^{\Gamma}\right)\right|_{t=0}, m=\overline{1, M_{\Gamma}}\right), r=\overline{1, R_0}\right), \\
+& B_{21}(x, t)=\operatorname{col}\left(\operatorname{str}\left(L_\rho^{\Gamma}\left(\partial_x\right) G\left(s-s_m^0\right), m=\overline{1, M_0}\right), \rho=\overline{1, R_{\Gamma}}\right), \\
+& B_{22}(x, t)=\operatorname{col}\left(\operatorname{str}\left(L_\rho^{\Gamma}\left(\partial_x\right) G\left(s-s_m^{\Gamma}\right), m=\overline{1, M_{\Gamma}}\right), \rho=\overline{1, R_{\Gamma}}\right) .
+\end{aligned}
+$$
+
+Розв'язання системи еквівалентне знаходженню вектора $\bar{u}$ такого, щоб
+$$
+\bar{u}=\arg \min _{u \in R^{M_0+M_{\Gamma}}} \int_{(\cdot)}\|B(s) u-Y(s)\|^2 d s .
+$$
+
+Далі маємо маємо
+$$
+\bar{u} \in \Omega_u=\left\{u: u=P^{+} B_y+v-P^{+} P v, \quad \forall v \in R^{M_0+M_{\Gamma}}\right\},
+$$
+
+де
+$$
+P=\int_{(\cdot)} B^T(s) B(s) d s, B_y=\int_{(\cdot)} B^T(s) Y(s) d s .
+$$
+Матрицю $P$ і вектор $B_y$ подамо у вигляді
+$$
+P=\left(\begin{array}{ll}
+P_{11} & P_{12} \\
+P_{21} & P_{22}
+\end{array}\right), \quad B_y=\left(\begin{array}{c}
+B_{y 1} \\
+B_{y 2}
+\end{array}\right),
+$$
+
+де
+$$
+\begin{gathered}
+P_{i j}=\int_{S_0} B_{1 i}^T(x) B_{1 j}(x) d x+\int_{\Gamma \times[0, T]} B_{2 i}^T(x, t) B_{2 j}(x, t) d x d t \\
+B_{y i}=\int_{S_0} B_{1 i}^T(x) Y_0(x) d x+\int_{\Gamma \times[0, T]} B_{2 i}^T(x, t) Y_{\Gamma}(x, t) d x d t \quad(i, j=\overline{1,2}) .
+\end{gathered}
+$$
+
+Вважаючи, що
+$$
+P^{+}=\left(\begin{array}{ll}
+Q_{11} & Q_{12} \\
+Q_{21} & Q_{22}
+\end{array}\right),
+$$
+
+де $\quad Q_{11} \in R^{M_0 \times M_0}, \quad Q_{12} \in R^{M_0 \times M_{\Gamma}}, \quad Q_{21} \in R^{M_{\Gamma} \times M_0}$, $Q_{22} \in R^{M_{\Gamma} \times M_{\Gamma}}$, a $\quad v=\operatorname{col}\left(v_0, v_{\Gamma}\right), \quad v_0 \in R^{M_0}, \quad v_{\Gamma} \in R^{M_{\Gamma}}$, знаходимо шукані згідно моделюючі вектори $u_0$ та $u_{\Gamma}$. При цьому
+$$
+\begin{aligned}
+& u_0 \in \Omega_0=\left\{u \in R^{M_0}: u=\left(Q_{11}, Q_{12}\right) B_y+\right. \\
+& \left.+v_0-\left(Q_{11}, Q_{12}\right) P v, \quad \forall v \in R^{M_0}\right\}, \\
+& u_{\Gamma} \in \Omega_{\Gamma}=\left\{u \in R^{M_{\Gamma}}: u=\left(Q_{21}, Q_{22}\right) B_y+\right. \\
+& \left.+v_{\Gamma}-\left(Q_{21}, Q_{22}\right) P v, \quad \forall v_{\Gamma} \in R^{M_{\Gamma}}\right\} .
+\end{aligned}
+$$
+
+Знайдені $з$ вектори $u_0$ та $u_{\Gamma}$ дозволяють знайти функцію $y(s)$ стану розглядуваної системи, яка початково-крайові умови моделює з точністю
+$$
+\begin{aligned}
+& \varepsilon_0^2=\min _{\substack{u_0 \in \Omega_0 \\
+u_{\Gamma} \in \Omega_{\Gamma}}} \Phi=\min _{u \in \Omega_0 \times \Omega_{\Gamma}} \int_{(\cdot)}\|B(s) u-Y(s)\|^2 d s=\int_{S_0} Y_0^T(x) Y_0(x) d x+ \\
+& +\int_{\Gamma \times[0, T]} Y_{\Gamma}^T(x, t) Y_{\Gamma}(x, t) d x d t-B_y^T P^{+} B_y,
+\end{aligned}
+$$
+
+Моделювання буде однозначним $(v \equiv 0)$ при $\operatorname{det} P>0$. За інших умов розв'язок задачі буде неоднозначним.
